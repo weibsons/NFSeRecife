@@ -1,0 +1,117 @@
+<EnviarLoteRpsEnvio xmlns="http://www.abrasf.org.br/ABRASF/arquivos/nfse.xsd">
+    <LoteRps Id="Lote_1">
+        <NumeroLote>1</NumeroLote>
+        <Cnpj>04642554000143</Cnpj>
+        <InscricaoMunicipal>1570790</InscricaoMunicipal>
+        <QuantidadeRps>2</QuantidadeRps>
+        <ListaRps>
+            <Rps>
+                <InfRps Id="Rps_1">
+                    <IdentificacaoRps>
+                        <Numero>1</Numero>
+                        <Serie>XYZ</Serie>
+                        <Tipo>1</Tipo>
+                    </IdentificacaoRps>
+                    <DataEmissao>2012-05-01T21:00:00</DataEmissao>
+                    <NaturezaOperacao>1</NaturezaOperacao>
+                    <OptanteSimplesNacional>2</OptanteSimplesNacional>
+                    <IncentivadorCultural>2</IncentivadorCultural>
+                    <Status>1</Status>
+                    <Servico>
+                        <Valores>
+                            <ValorServicos>1000.00</ValorServicos>
+                            <ValorDeducoes>0</ValorDeducoes>
+                            <ValorPis>10.00</ValorPis>
+                            <ValorCofins>10.00</ValorCofins>
+                            <ValorInss>10.00</ValorInss>
+                            <ValorIr>10.00</ValorIr>
+                            <ValorCsll>10.00</ValorCsll>
+                            <IssRetido>2</IssRetido>
+                            <ValorIss>10.00</ValorIss>
+                            <Aliquota>0.05</Aliquota>
+                        </Valores>
+                        <ItemListaServico>0102</ItemListaServico>
+                        <CodigoTributacaoMunicipio>6201500</CodigoTributacaoMunicipio>
+                        <Discriminacao>DESCRICAO DA NOTA
+                            1. Item 1
+                            2. Item 2
+                            3. Item 3</Discriminacao>
+                        <CodigoMunicipio>2611606</CodigoMunicipio>
+                    </Servico>
+                    <Prestador>
+                        <Cnpj>04642554000143</Cnpj>
+                        <InscricaoMunicipal>1570790</InscricaoMunicipal>
+                    </Prestador>
+                    <Tomador>
+                        <IdentificacaoTomador>
+                            <CpfCnpj>
+                                <Cnpj>12345678000195</Cnpj>
+                            </CpfCnpj>
+                        </IdentificacaoTomador>
+                        <RazaoSocial>INSCRICAO DE TESTE</RazaoSocial>
+                        <Endereco>
+                            <Endereco>RUA AGENOR LOPES</Endereco>
+                            <Numero>300</Numero>
+                            <Complemento>SALA 1001 1002</Complemento>
+                            <Bairro>BOA VIAGEM</Bairro>
+                            <CodigoMunicipio>2611606</CodigoMunicipio>
+                            <Uf>PE</Uf>
+                            <Cep>51021110</Cep>
+                        </Endereco>
+                    </Tomador>
+                </InfRps>
+            </Rps>
+            <Rps>
+                <InfRps Id="Rps_2">
+                    <IdentificacaoRps>
+                        <Numero>2</Numero>
+                        <Serie>XYZ</Serie>
+                        <Tipo>1</Tipo>
+                    </IdentificacaoRps>
+                    <DataEmissao>2012-05-05T21:10:00</DataEmissao>
+                    <NaturezaOperacao>1</NaturezaOperacao>
+                    <OptanteSimplesNacional>2</OptanteSimplesNacional>
+                    <IncentivadorCultural>2</IncentivadorCultural>
+                    <Status>1</Status>
+                    <Servico>
+                        <Valores>
+                            <ValorServicos>1000.00</ValorServicos>
+                            <ValorDeducoes>0</ValorDeducoes>
+                            <IssRetido>2</IssRetido>
+                            <ValorIss>10.00</ValorIss>
+                            <Aliquota>0.05</Aliquota>
+                        </Valores>
+                        <ItemListaServico>0102</ItemListaServico>
+                        <CodigoTributacaoMunicipio>6201500</CodigoTributacaoMunicipio>
+                        <Discriminacao>DESCRICAO DA NOTA
+                            1. Item 1
+                            2. Item 2
+                            3. Item 3</Discriminacao>
+                        <CodigoMunicipio>2611606</CodigoMunicipio>
+                    </Servico>
+                    <Prestador>
+                        <Cnpj>04642554000143</Cnpj>
+                        <InscricaoMunicipal>1570790</InscricaoMunicipal>
+                    </Prestador>
+                    <Tomador>
+                        <IdentificacaoTomador>
+                            <CpfCnpj>
+                                <Cpf>12345678909</Cpf>
+                            </CpfCnpj>
+                        </IdentificacaoTomador>
+                        <RazaoSocial>TOMADOR DE TESTE</RazaoSocial>
+                        <Endereco>
+                            <Endereco>RUA AGENOR LOPES</Endereco>
+                            <Numero>300</Numero>
+                            <Complemento>SALA 1001 1002</Complemento>
+                            <Bairro>BOA VIAGEM</Bairro>
+                            <CodigoMunicipio>2611606</CodigoMunicipio>
+                            <Uf>PE</Uf>
+                            <Cep>51021110</Cep>
+                        </Endereco>
+                    </Tomador>
+                </InfRps>
+            </Rps>
+        </ListaRps>
+    </LoteRps>
+</EnviarLoteRpsEnvio>
