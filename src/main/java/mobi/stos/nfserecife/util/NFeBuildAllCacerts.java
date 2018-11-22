@@ -30,23 +30,17 @@ import javax.net.ssl.X509TrustManager;
  */
 public class NFeBuildAllCacerts {
 
-    private static final String JSSECACERTS = "NFeCacerts";
+    private static final String JSSECACERTS = System.getProperty("java.home") + 
+            File.separatorChar + "lib" + 
+            File.separatorChar + "security" +
+            File.separatorChar + "cacerts";
     private static final int TIMEOUT_WS = 30;
 
     public static void main(String[] args) {
         try {
             char[] passphrase = "changeit".toCharArray();
-
             File file = new File(JSSECACERTS);
-            if (file.isFile() == false) {
-                char SEP = File.separatorChar;
-                File dir = new File(System.getProperty("java.home") + SEP + "lib" + SEP + "security");
-                file = new File(dir, JSSECACERTS);
-                if (file.isFile() == false) {
-                    file = new File(dir, "cacerts");
-                }
-            }
-
+            
             info("| Loading KeyStore " + file + "...");
             KeyStore ks;
             try (InputStream in = new FileInputStream(file)) {

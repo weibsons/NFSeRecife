@@ -47,10 +47,12 @@ public class TransmitirNFSe {
         System.setProperty("javax.net.ssl.keyStoreType", "PKCS12");
         System.setProperty("javax.net.ssl.keyStore", Certs.instance().pfx);
         System.setProperty("javax.net.ssl.keyStorePassword", Certs.instance().password);
+//        System.setProperty("javax.net.ssl.keyStore", "C:\\Users\\Weibson\\Dropbox\\Projetos\\NFSeRecife\\src\\main\\resources\\certs\\04986320.pfx");
+//        System.setProperty("javax.net.ssl.keyStorePassword", "04986320");
 
         System.setProperty("javax.net.ssl.trustStoreType", "JKS");
-        System.setProperty("javax.net.ssl.trustStore", Certs.instance().trustStore);
-        System.setProperty("javax.net.ssl.trueStorePassword", "changeit");
+        System.setProperty("javax.net.ssl.trustStore", "C:\\Program Files\\Java\\jdk1.8.0_191\\jre\\lib\\security\\cacerts");
+        System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
     }
 
     private KeyStore doKeyStorePFX(String token) throws KeyStoreException, IOException, NoSuchAlgorithmException, CertificateException {
