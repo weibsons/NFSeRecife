@@ -10,11 +10,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Weibson
  */
+@XmlType(propOrder = {"identificacao", "dataEmissao", "naturezaOperacao",
+    "optanteSimplesNacional", "incentivadorCultural", "status", "servico",
+    "prestador", "tomador"
+})
 public class Rps implements Serializable {
 
     private Identificacao identificacao;
@@ -34,7 +39,7 @@ public class Rps implements Serializable {
 
     @XmlAttribute(name = "Id")
     public String getId() {
-        return "Rps_5";
+        return "Rps_" + identificacao.getNumero();
     }
 
     @XmlElement(name = "IdentificacaoRps")

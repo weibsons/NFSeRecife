@@ -3,23 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mobi.stos.nfserecife.bean;
-
-import java.io.Serializable;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+package mobi.stos.nfserecife.restful.model;
 
 /**
  *
  * @author Weibson
  */
-@XmlType(propOrder = {"cnpj", "inscricaoMunicipal"})
-public class Prestador implements Serializable {
+public class NFSePrestador {
 
     private String cnpj;
     private String inscricaoMunicipal;
+    private String itemListaServico;
+    private String codigoTributacao;
 
-    @XmlElement(name = "Cnpj")
     public String getCnpj() {
         return cnpj;
     }
@@ -28,13 +24,28 @@ public class Prestador implements Serializable {
         this.cnpj = cnpj;
     }
 
-    @XmlElement(name = "InscricaoMunicipal")
     public String getInscricaoMunicipal() {
         return inscricaoMunicipal;
     }
 
     public void setInscricaoMunicipal(String inscricaoMunicipal) {
         this.inscricaoMunicipal = inscricaoMunicipal;
+    }
+
+    public String getItemListaServico() {
+        return itemListaServico;
+    }
+
+    public void setItemListaServico(String itemListaServico) {
+        this.itemListaServico = itemListaServico;
+    }
+
+    public String getCodigoTributacao() {
+        return codigoTributacao;
+    }
+
+    public void setCodigoTributacao(String codigoTributacao) {
+        this.codigoTributacao = codigoTributacao;
     }
 
 }

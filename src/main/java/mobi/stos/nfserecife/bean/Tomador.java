@@ -7,17 +7,19 @@ package mobi.stos.nfserecife.bean;
 
 import java.io.Serializable;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Weibson
  */
+@XmlType(propOrder = {"identificacaoTomador", "razaoSocial", "endereco", "contato"})
 public class Tomador implements Serializable {
 
     private IdentificacaoTomador identificacaoTomador;
     private String razaoSocial;
     private Endereco endereco;
+    private Contato contato;
 
     @XmlElement(name = "IdentificacaoTomador")
     public IdentificacaoTomador getIdentificacaoTomador() {
@@ -44,6 +46,15 @@ public class Tomador implements Serializable {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    @XmlElement(name = "Contato")
+    public Contato getContato() {
+        return contato;
+    }
+
+    public void setContato(Contato contato) {
+        this.contato = contato;
     }
 
 }

@@ -6,11 +6,13 @@
 package mobi.stos.nfserecife.bean;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Weibson
  */
+@XmlType(propOrder = {"endereco", "numero", "complemento", "bairro", "codigoMunicipio", "uf", "cep"})
 public class Endereco {
 
     private String endereco;

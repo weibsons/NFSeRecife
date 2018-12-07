@@ -7,11 +7,13 @@ package mobi.stos.nfserecife.bean;
 
 import java.io.Serializable;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Weibson
  */
+@XmlType(propOrder = {"valores", "itemListaServico", "codigoTributacaoMunicipio", "discriminacao", "codigoMunicipio"})
 public class Servico implements Serializable {
 
     private Valores valores;

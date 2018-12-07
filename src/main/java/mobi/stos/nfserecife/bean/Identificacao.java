@@ -7,15 +7,17 @@ package mobi.stos.nfserecife.bean;
 
 import java.io.Serializable;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Weibson
  */
+@XmlType(propOrder = {"numero", "serie", "tipo"})
 public class Identificacao implements Serializable {
 
-    private String serie;
     private int numero;
+    private String serie;
     private int tipo;
 
     @XmlElement(name = "Serie")

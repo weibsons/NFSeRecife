@@ -156,10 +156,10 @@ public class AssinarXMLsCertfificadoA1 {
         Transformer trans = tf.newTransformer();
         trans.transform(new DOMSource(doc), new StreamResult(os));
         String xml = os.toString();
-        if (StringUtils.isNotBlank(xml)) {
-            xml = xml.replaceAll("\\r\\n", "");
-            xml = xml.replaceAll(" standalone=\"no\"", "");
-        }
+//        if (StringUtils.isNotBlank(xml)) {
+//            xml = xml.replaceAll("\\r\\n", "");
+//            xml = xml.replaceAll(" standalone=\"no\"", "");
+//        }
         return xml;
     }
 

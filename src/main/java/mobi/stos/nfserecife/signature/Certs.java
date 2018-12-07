@@ -17,6 +17,7 @@ public class Certs {
 
     public final String trustStore;
     public final String pfx;
+    public final String sign;
     public final String password;
 
     public static Certs instance() {
@@ -31,7 +32,8 @@ public class Certs {
         String keystore = javaHomePath + "/lib/security/cacerts";
         
         this.pfx = NFSe.class.getClassLoader().getResource("certs/04986320.pfx").getPath();
-        this.trustStore = keystore; //NFSe.class.getClassLoader().getResource("certs/NFeCacerts.jks").getPath();
+        this.sign = NFSe.class.getClassLoader().getResource("certs/homolog_cert.pfx").getPath();
+        this.trustStore = NFSe.class.getClassLoader().getResource("certs/cacerts").getPath();
         this.password = "04986320";
     }
 

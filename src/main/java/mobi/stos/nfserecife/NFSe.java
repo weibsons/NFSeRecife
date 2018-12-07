@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.Charset;
+import java.text.DecimalFormat;
 import javax.xml.bind.JAXB;
 import mobi.stos.nfserecife.bean.CpfCnpj;
 import mobi.stos.nfserecife.bean.Endereco;
@@ -41,7 +42,7 @@ public class NFSe {
 
         //<editor-fold defaultstate="collapsed" desc="Identificação">
         Identificacao identificacao = new Identificacao();
-        identificacao.setNumero(5);
+        identificacao.setNumero(100);
         identificacao.setSerie("1");
         identificacao.setTipo(1);
         rps.setIdentificacao(identificacao);
@@ -54,22 +55,18 @@ public class NFSe {
 
         //<editor-fold defaultstate="collapsed" desc="Serviços">
         Servico servico = new Servico();
-        servico.setItemListaServico(Util.onlyNumber("13.03")); // Fotografia e cinematografia, inclusive revelação, ampliação, cópia, reprodução, trucagem e congêneres.
-        servico.setCodigoTributacaoMunicipio(Util.onlyNumber("7420-0/04")); // Filmagem de festas e eventos
+        servico.setItemListaServico(Util.onlyNumber("12.08")); // Feiras, exposições, congressos e congêneres.
+        servico.setCodigoTributacaoMunicipio(Util.onlyNumber("8230-0/01")); // Serviços de organização de feiras, congressos, exposições e festas
         servico.setDiscriminacao(Util.unaccent("NOTA FISCAL DE TESTE"));
 
         //<editor-fold defaultstate="collapsed" desc="valores ...">
+        DecimalFormat df = new DecimalFormat("0.00");
+
+        double valorServico = 1;
+
         Valores valores = new Valores();
-        valores.setAliquota(0.65 / 100);    // 0.65%
-        valores.setCofins(3 / 100);         // 3%
-        valores.setCsll(9 / 100);           // 3%
-        valores.setDeducoes(0);             // 0%
-        valores.setInss(0);                 // 0%
-        valores.setIr(15 / 100);            // 15%
-        valores.setIss(5 / 100);            // 5%
-        valores.setIssRetido(0);            // 0%
-        valores.setPis(0.65 / 100);         // 0.65%
-        valores.setValorServico(0.01);      // 1 centavo
+        valores.setIssRetido(SimNao.NAO.getValue());
+        valores.setValorServico(df.format(valorServico).replace(",", "."));
         servico.setValores(valores);
         //</editor-fold>
         rps.setServico(servico);
@@ -84,7 +81,7 @@ public class NFSe {
 
         //<editor-fold defaultstate="collapsed" desc="Tomador">
         Tomador tomador = new Tomador();
-
+        tomador.setRazaoSocial(Util.unaccent("Weibson S Santos"));
         IdentificacaoTomador identificacaoTomador = new IdentificacaoTomador();
         identificacaoTomador.setCpfCnpj(new CpfCnpj(null, Util.onlyNumber("07375446431")));
         tomador.setIdentificacaoTomador(identificacaoTomador);
@@ -107,14 +104,15 @@ public class NFSe {
         StringWriter sw = new StringWriter();
         JAXB.marshal(gerarNfseEnvio, sw);
         String xmlString = sw.toString();
-
+        
         AssinarXMLsCertfificadoA1 assinarXMLsCertfificadoA1 = new AssinarXMLsCertfificadoA1();
         String xmlEnviNFeAssinado = assinarXMLsCertfificadoA1.assinaEnviNFe(xmlString, Certs.instance().pfx, Certs.instance().password);
-        FileUtils.writeStringToFile(new File("c:\\temp\\xml_assinado.xml"), xmlEnviNFeAssinado, Charset.forName("utf-8"));
+        
+        FileUtils.write(new File("c:\\temp\\xml_assinado.xml"), xmlEnviNFeAssinado, Charset.defaultCharset());
 
         TransmitirNFSe transmitir = new TransmitirNFSe();
-        transmitir.enviar();
-        
+        //transmitir.enviar(xmlEnviNFeAssinado);
+
     }
 
 }

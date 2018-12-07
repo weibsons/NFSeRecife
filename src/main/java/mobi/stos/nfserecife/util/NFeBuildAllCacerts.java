@@ -50,6 +50,7 @@ public class NFeBuildAllCacerts {
 
             get("nfse.recife.pe.gov.br", 443, ks);
             get("nfe.sefaz.pe.gov.br", 443, ks);
+            
 
             File cafile = new File(JSSECACERTS);
             try (OutputStream out = new FileOutputStream(cafile)) {

@@ -5,24 +5,23 @@
  */
 package mobi.stos.nfserecife.bean;
 
-import java.io.Serializable;
 import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
  * @author Weibson
  */
-public class IdentificacaoTomador implements Serializable {
+public class Contato {
 
-    private CpfCnpj cpfCnpj;
+    private String email;
 
-    @XmlElement(name = "CpfCnpj")
-    public CpfCnpj getCpfCnpj() {
-        return cpfCnpj;
+    @XmlElement(name = "Email")
+    public String getEmail() {
+        return email;
     }
 
-    public void setCpfCnpj(CpfCnpj cpfCnpj) {
-        this.cpfCnpj = cpfCnpj;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 }

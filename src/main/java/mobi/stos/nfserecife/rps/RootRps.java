@@ -5,7 +5,6 @@
  */
 package mobi.stos.nfserecife.rps;
 
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import mobi.stos.nfserecife.bean.Rps;
 
